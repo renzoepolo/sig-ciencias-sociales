@@ -4,3 +4,4 @@ __pycache__/
 *.py[cod]
 datos/cache/
 .DS_Store
+.virtual_documents/

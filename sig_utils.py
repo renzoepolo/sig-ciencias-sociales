@@ -32,6 +32,7 @@ __all__ = [
     "mapa_coropletico",
     "ESTILOS",
     "CRS_ARGENTINA",
+    "grilla",
 ]
 
 # --------------------------------------------------------------------------
@@ -408,3 +409,85 @@ def mapa_coropletico(gdf, columna, titulo=None, cmap="Spectral_r",
         plt.tight_layout()
 
     return ax
+
+
+# --------------------------------------------------------------------------
+# Grillas regulares
+# --------------------------------------------------------------------------
+
+def grilla(zona, lado_km: float, forma: str = "cuadrado",
+           desplazamiento: float = 0.0, crs_metrico: str = "ESRI:102033"):
+    """
+    Genera una grilla regular que cubre `zona`, en celdas de área comparable.
+
+    Sirve para estudiar el problema de la unidad de área modificable (MAUP),
+    donde importa poder cambiar UNA cosa por vez:
+
+    - `lado_km` distinto, misma forma  -> efecto de AGREGACIÓN (escala)
+    - misma área, `forma` distinta     -> efecto de ZONIFICACIÓN
+    - misma área y forma, `desplazamiento` distinto -> zonificación en estado puro
+
+    `desplazamiento` se expresa en fracción de celda (0.5 = media celda).
+    Los hexágonos se dimensionan para tener la misma superficie que el cuadrado
+    de `lado_km`, de modo que las dos grillas sean comparables.
+
+    Devuelve un GeoDataFrame en el CRS de `zona`, recortado a su extensión.
+    """
+    import geopandas as gpd
+    import numpy as np
+    from shapely.geometry import Polygon
+
+    crs_original = zona.crs
+    if crs_original is None:
+        raise ValueError("La zona no tiene CRS definido.")
+
+    zona_m = zona.to_crs(crs_metrico)
+    minx, miny, maxx, maxy = zona_m.total_bounds
+    lado = lado_km * 1000.0
+
+    celdas = []
+    if forma == "cuadrado":
+        dx = dy = lado
+        offset_x = offset_y = desplazamiento * lado
+        xs = np.arange(minx - dx - offset_x, maxx + dx, dx)
+        ys = np.arange(miny - dy - offset_y, maxy + dy, dy)
+        for x in xs:
+            for y in ys:
+                celdas.append(Polygon([(x, y), (x + dx, y),
+                                       (x + dx, y + dy), (x, y + dy)]))
+
+    elif forma == "hexagono":
+        # Hexágono regular de la misma área que el cuadrado de lado `lado`:
+        # area = 3*sqrt(3)/2 * r^2  ->  r = sqrt(2*area / (3*sqrt(3)))
+        area = lado ** 2
+        r = np.sqrt(2 * area / (3 * np.sqrt(3)))
+        dx = 1.5 * r                      # separación horizontal entre centros
+        dy = np.sqrt(3) * r               # separación vertical
+        offset_x = desplazamiento * dx
+        offset_y = desplazamiento * dy
+        col = 0
+        x = minx - dx - offset_x
+        while x < maxx + dx:
+            desfase = 0 if col % 2 == 0 else dy / 2
+            y = miny - dy - offset_y + desfase
+            while y < maxy + dy:
+                celdas.append(Polygon([
+                    (x + r * np.cos(a), y + r * np.sin(a))
+                    for a in np.linspace(0, 2 * np.pi, 7)[:-1]
+                ]))
+                y += dy
+            x += dx
+            col += 1
+    else:
+        raise ValueError("forma debe ser 'cuadrado' o 'hexagono'")
+
+    g = gpd.GeoDataFrame({"celda_id": range(len(celdas))},
+                         geometry=celdas, crs=crs_metrico)
+
+    # Nos quedamos solo con las celdas que tocan la zona de estudio
+    envolvente = zona_m.union_all()
+    g = g[g.intersects(envolvente)].reset_index(drop=True)
+    g["celda_id"] = range(len(g))
+    g["area_km2"] = g.area / 1e6
+
+    return g.to_crs(crs_original)
