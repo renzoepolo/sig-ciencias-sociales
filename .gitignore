@@ -5,3 +5,7 @@ __pycache__/
 datos/cache/
 .DS_Store
 .virtual_documents/
+
+# Clases pendientes de validación docente: se trabajan localmente y no se
+# publican hasta que estén revisadas. Para publicar una, borrar su línea.
+Clase 2/
