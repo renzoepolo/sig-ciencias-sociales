@@ -26,8 +26,10 @@ Las notebooks se abren en **Google Colab**, sin instalar nada en tu computadora.
 Cada clase incluye:
 
 - una **presentación** con la parte conceptual;
-- una **notebook** con la práctica, que referencia las diapositivas correspondientes;
-- una **página para el aula virtual** con la consigna y el cierre.
+- una **notebook** con la práctica, que referencia las diapositivas correspondientes.
+
+La consigna, el cierre y la tarea de cada clase se publican en el aula virtual de la
+Especialización.
 
 ---
 

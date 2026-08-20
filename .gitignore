@@ -9,3 +9,7 @@ datos/cache/
 # Clases pendientes de validación docente: se trabajan localmente y no se
 # publican hasta que estén revisadas. Para publicar una, borrar su línea.
 Clase 2/
+
+# Páginas del aula virtual (EVEA): son material docente, se cargan a mano en
+# el campus y NUNCA se publican en este repositorio.
+Aula_virtual_*.md
