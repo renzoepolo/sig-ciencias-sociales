@@ -2,13 +2,13 @@
 */.ipynb_checkpoints/
 __pycache__/
 *.py[cod]
-datos/cache/
+**/datos/cache/
 .DS_Store
 .virtual_documents/
 
-# Clases pendientes de validación docente: se trabajan localmente y no se
-# publican hasta que estén revisadas. Para publicar una, borrar su línea.
-Clase 2/
+# Copia local del módulo del curso que descarga la celda de setup de cada
+# notebook. El original vive en la raíz del repositorio.
+Clase */sig_utils.py
 
 # Páginas del aula virtual (EVEA): son material docente, se cargan a mano en
 # el campus y NUNCA se publican en este repositorio.
