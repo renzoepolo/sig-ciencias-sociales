@@ -13,3 +13,8 @@ Clase */sig_utils.py
 # Páginas del aula virtual (EVEA): son material docente, se cargan a mano en
 # el campus y NUNCA se publican en este repositorio.
 Aula_virtual_*.md
+
+# Archivos que las notebooks generan al ejecutarse junto a ellas: la caché de
+# OSMnx y las capas que la Clase 3 exporta después de descargarlas.
+Clase */cache/
+Clase */salud_ign.gpkg

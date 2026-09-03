@@ -15,9 +15,9 @@ Las notebooks se abren en **Google Colab**, sin instalar nada en tu computadora.
 | Clase | Tema | Notebook |
 |---|---|---|
 | 1 | ¿Por qué el "dónde" importa? | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%201/Clase_1.ipynb) |
-| 2 | Las particularidades del dato espacial | *próximamente* |
-| 3 | Sistemas de referencia y proyecciones | *próximamente* |
-| 4 | Adquisición de datos: IDE, geoservicios y datos abiertos | *próximamente* |
+| 2 | Las particularidades del dato espacial | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%202/Clase_2.ipynb) |
+| 3 | ¿De dónde saco los datos? | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%203/Clase_3.ipynb) |
+| 4 | Sistemas de referencia y proyecciones | *próximamente* |
 | 5 | Cartografía temática | *próximamente* |
 | 6 | Geoprocesamiento | *próximamente* |
 | 7 | Autocorrelación espacial | *próximamente* |

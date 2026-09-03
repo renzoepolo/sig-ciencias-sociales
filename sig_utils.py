@@ -111,7 +111,28 @@ CATALOGO = {
         archivo="grilla_hexagonos.gpkg", crs="EPSG:5347",
         fuente="Elaboración propia", descripcion="Grilla regular hexagonal.",
     ),
-    # Clase 3
+    # Clase 3 — copias congeladas de las tres fuentes en vivo
+    "poblaciones_departamentos": dict(
+        archivo="poblaciones_departamentos_2022.csv", crs=None,
+        fuente="poblaciones.org — Censo 2022 (copia literal del portal)",
+        descripcion="527 departamentos con población, hogares y geometría en WKT. Sin CRS declarado.",
+    ),
+    "ign_salud": dict(
+        archivo="ign_salud.gpkg", crs="EPSG:4326",
+        fuente="IGN — WFS, capa de edificios de salud (copia congelada)",
+        descripcion="Establecimientos de salud del país, tal como los devuelve el geoservicio.",
+    ),
+    "osm_amenities": dict(
+        archivo="osm_amenities_barrios.gpkg", crs="EPSG:4326",
+        fuente="OpenStreetMap vía OSMnx (copia congelada)",
+        descripcion="Elementos con etiqueta amenity en Recoleta y Villa Lugano.",
+    ),
+    "osm_barrios": dict(
+        archivo="osm_barrios_limites.gpkg", crs="EPSG:4326",
+        fuente="OpenStreetMap vía OSMnx (copia congelada)",
+        descripcion="Contorno de los dos barrios consultados.",
+    ),
+    # Clase 4 — proyecciones
     "continentes": dict(
         archivo="ne_110m_land.gpkg", crs="EPSG:4326",
         fuente="Natural Earth 5.1.1", descripcion="Masas continentales.",
