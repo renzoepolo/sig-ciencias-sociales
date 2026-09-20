@@ -17,7 +17,7 @@ Las notebooks se abren en **Google Colab**, sin instalar nada en tu computadora.
 | 1 | ¿Por qué el "dónde" importa? | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%201/Clase_1.ipynb) |
 | 2 | Las particularidades del dato espacial | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%202/Clase_2.ipynb) |
 | 3 | ¿De dónde saco los datos? | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%203/Clase_3.ipynb) |
-| 4 | Sistemas de referencia y proyecciones | *próximamente* |
+| 4 | Sistemas de referencia y proyecciones | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%204/Clase_4.ipynb) |
 | 5 | Cartografía temática: ¿dónde está la pobreza? | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%205/Clase_5.ipynb) |
 | 6 | Geoprocesamiento | *próximamente* |
 | 7 | Autocorrelación espacial | *próximamente* |
