@@ -53,20 +53,25 @@ CACHE = pathlib.Path(os.environ.get("SIG_CACHE", "datos/cache"))
 # Sistemas de referencia usados a lo largo del curso.
 # Las fajas Gauss-Krüger de POSGAR 2007 cubren el territorio continental
 # argentino de oeste a este; cada una es válida en una franja de 3° de longitud.
+# Cada faja se identifica por su meridiano central y es válida 1,5° a cada
+# lado de él. La faja que le corresponde a un punto se obtiene con `faja()`.
 CRS_ARGENTINA = {
     "geograficas": "EPSG:4326",       # WGS 84 — grados. NO sirve para medir.
     "web": "EPSG:3857",               # Web Mercator — solo para mapas base.
-    "posgar_faja_1": "EPSG:5343",     # oeste                    (72°O – 69°O)
-    "posgar_faja_2": "EPSG:5344",
-    "posgar_faja_3": "EPSG:5345",
-    "posgar_faja_4": "EPSG:5346",
-    "posgar_faja_5": "EPSG:5347",     # Buenos Aires, Pergamino  (60°O – 57°O)
-    "posgar_faja_6": "EPSG:5348",
-    "posgar_faja_7": "EPSG:5349",     # este
+    "posgar_faja_1": "EPSG:5343",     # oeste   73,5°O – 70,5°O  (central 72°O)
+    "posgar_faja_2": "EPSG:5344",     #         70,5°O – 67,5°O  (central 69°O)
+    "posgar_faja_3": "EPSG:5345",     #         67,5°O – 64,5°O  (central 66°O)
+    "posgar_faja_4": "EPSG:5346",     #         64,5°O – 61,5°O  (central 63°O)
+    "posgar_faja_5": "EPSG:5347",     # Bs As   61,5°O – 58,5°O  (central 60°O)
+    "posgar_faja_6": "EPSG:5348",     #         58,5°O – 55,5°O  (central 57°O)
+    "posgar_faja_7": "EPSG:5349",     # este    55,5°O – 52,5°O  (central 54°O)
     # Para análisis que abarcan todo el país y no entran en una sola faja.
     # Ojo: EPSG:5340 es POSGAR 2007 GEOGRÁFICO (grados), no sirve para medir.
     "sudamerica_equivalente": "ESRI:102033",  # Albers — conserva superficies
     "sudamerica_equidistante": "ESRI:102032", # cónica — conserva distancias
+    # Proyecciones mundiales, para el mapa del planeta entero (Clase 4).
+    "mundo_equivalente": "ESRI:54009",        # Mollweide — conserva superficies
+    "mundo_compromiso": "ESRI:54030",         # Robinson — no conserva nada
 }
 
 
@@ -133,18 +138,15 @@ CATALOGO = {
         descripcion="Contorno de los dos barrios consultados.",
     ),
     # Clase 4 — proyecciones
-    "continentes": dict(
-        archivo="ne_110m_land.gpkg", crs="EPSG:4326",
-        fuente="Natural Earth 5.1.1", descripcion="Masas continentales.",
-    ),
     "canevas": dict(
         archivo="canevas.gpkg", crs="EPSG:4326",
-        fuente="Elaboración propia", descripcion="Red de paralelos y meridianos.",
+        fuente="Elaboración propia",
+        descripcion="Paralelos y meridianos cada 15°, para ver la deformación.",
     ),
     "indicatriz": dict(
         archivo="indicatriz_tissot.gpkg", crs="EPSG:4326",
         fuente="Elaboración propia",
-        descripcion="Círculos de Tissot para visualizar deformación.",
+        descripcion="Indicatrices de Tissot: círculos de 500 km de radio sobre el elipsoide.",
     ),
     # Clase 5 y 7
     "departamentos_nbi": dict(
