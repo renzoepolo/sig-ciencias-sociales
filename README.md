@@ -19,7 +19,7 @@ Las notebooks se abren en **Google Colab**, sin instalar nada en tu computadora.
 | 3 | ¿De dónde saco los datos? | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%203/Clase_3.ipynb) |
 | 4 | Sistemas de referencia y proyecciones | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%204/Clase_4.ipynb) |
 | 5 | Cartografía temática: ¿dónde está la pobreza? | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%205/Clase_5.ipynb) |
-| 6 | Geoprocesamiento: construir variables territoriales | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%206/Clase_6.ipynb) |
+| 6 | Análisis espacial: construir variables territoriales | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%206/Clase_6.ipynb) |
 | 7 | Proximidad, accesibilidad y cambio de unidad de análisis | *próximamente* |
 | 8 | Autocorrelación espacial: ¿la pobreza se agrupa? | *próximamente* |
 
