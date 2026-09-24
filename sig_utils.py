@@ -154,37 +154,12 @@ CATALOGO = {
         fuente="INDEC — Censo Nacional de Población, Hogares y Viviendas 2022",
         descripcion="527 departamentos con indicadores de hogares.",
     ),
-    "departamentos_nbi_2010_2022": dict(
-        archivo="censo_nbi_2010-2022.gpkg", crs="EPSG:4326",
-        fuente="INDEC — Censos 2010 y 2022",
-        descripcion="NBI por departamento en ambos censos.",
-    ),
-    # Clase 6 — copias congeladas del WFS de Pergamino
-    "pergamino_barrios": dict(
-        archivo="pergamino_barrios.gpkg", crs="EPSG:5347",
-        fuente="IDE Municipalidad de Pergamino (copia congelada)",
-        descripcion="Límites de barrios del partido de Pergamino.",
-    ),
-    "pergamino_centros_salud": dict(
-        archivo="pergamino_centros_salud.gpkg", crs="EPSG:4326",
-        fuente="IDE Municipalidad de Pergamino (copia congelada)",
-        descripcion="Centros de atención sanitaria, ya geocodificados.",
-    ),
-    "pergamino_farmacias": dict(
-        archivo="pergamino_farmacias.gpkg", crs="EPSG:4326",
-        fuente="IDE Municipalidad de Pergamino (copia congelada)",
-        descripcion="Farmacias del partido.",
-    ),
-    "pergamino_rutas_ors": dict(
-        archivo="pergamino_rutas_ors.csv", crs=None,
-        fuente="OpenRouteService (resultado precalculado)",
-        descripcion="Distancia y duración por calle de cada barrio a su centro de salud más cercano.",
-    ),
-    # Clase 8
-    "cordoba_radios": dict(
-        archivo="cordoba_censo.gpkg", crs="EPSG:5347",
-        fuente="INDEC — Censo 2010, radios censales de Córdoba",
-        descripcion="Radios censales con variables socioeconómicas.",
+    # Clase 6 — geoprocesamiento sobre Recoleta y Villa Lugano
+    "salud_barrios": dict(
+        archivo="salud_barrios.gpkg", crs="EPSG:4326",
+        fuente="IGN — capa de salud del geoservicio WFS, recortada a los dos barrios",
+        descripcion=("Los 13 efectores de salud que caen en Recoleta (4 hospitales) y "
+                     "Villa Lugano (9 CeSAC)."),
     ),
 }
 

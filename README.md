@@ -19,9 +19,9 @@ Las notebooks se abren en **Google Colab**, sin instalar nada en tu computadora.
 | 3 | ¿De dónde saco los datos? | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%203/Clase_3.ipynb) |
 | 4 | Sistemas de referencia y proyecciones | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%204/Clase_4.ipynb) |
 | 5 | Cartografía temática: ¿dónde está la pobreza? | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%205/Clase_5.ipynb) |
-| 6 | Geoprocesamiento | *próximamente* |
-| 7 | Autocorrelación espacial | *próximamente* |
-| 8 | Inferencia espacial | *próximamente* |
+| 6 | Geoprocesamiento: construir variables territoriales | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%206/Clase_6.ipynb) |
+| 7 | Proximidad, accesibilidad y cambio de unidad de análisis | *próximamente* |
+| 8 | Autocorrelación espacial: ¿la pobreza se agrupa? | *próximamente* |
 
 Cada clase incluye:
 
@@ -30,6 +30,10 @@ Cada clase incluye:
 
 La consigna, el cierre y la tarea de cada clase se publican en el aula virtual de la
 Especialización.
+
+El seminario se aprueba con un trabajo final: una notebook propia, sobre una pregunta
+territorial elegida por cada estudiante. La consigna y la rúbrica están en
+[`TRABAJO_FINAL.md`](TRABAJO_FINAL.md).
 
 ---
 
@@ -52,6 +56,10 @@ provincias = cargar("provincias")
 | `provincias` | 24 jurisdicciones argentinas con población y hogares | IGN / INDEC Censo 2022 |
 | `ruta40` | Traza de la Ruta Nacional 40 | IGN |
 | `escuelas` | 22.753 escuelas primarias georreferenciadas | Ministerio de Educación |
+| `departamentos_nbi` | 527 departamentos con indicadores de hogares del Censo 2022 | INDEC |
+| `osm_barrios` / `osm_amenities` | Recoleta y Villa Lugano, y sus 1.770 equipamientos | OpenStreetMap |
+| `ign_salud` | 8.311 establecimientos de salud del país | IGN, geoservicio WFS |
+| `salud_barrios` | Los 13 efectores de salud que caen en esos dos barrios | IGN |
 
 Para ver el catálogo completo:
 
