@@ -20,8 +20,8 @@ Las notebooks se abren en **Google Colab**, sin instalar nada en tu computadora.
 | 4 | Sistemas de referencia y proyecciones | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%204/Clase_4.ipynb) |
 | 5 | Cartografía temática: ¿dónde está la pobreza? | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%205/Clase_5.ipynb) |
 | 6 | Análisis espacial: construir variables territoriales | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%206/Clase_6.ipynb) |
-| 7 | Proximidad, accesibilidad y cambio de unidad de análisis | *próximamente* |
-| 8 | Autocorrelación espacial: ¿la pobreza se agrupa? | *próximamente* |
+| 7 | Accesibilidad y cambio de unidad de análisis | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%207/Clase_7.ipynb) |
+| 8 | Autocorrelación espacial: ¿el patrón es azar? | [Abrir en Colab](https://colab.research.google.com/github/renzoepolo/sig-ciencias-sociales/blob/main/Clase%208/Clase_8.ipynb) |
 
 Cada clase incluye:
 
@@ -60,6 +60,8 @@ provincias = cargar("provincias")
 | `osm_barrios` / `osm_amenities` | Recoleta y Villa Lugano, y sus 1.770 equipamientos | OpenStreetMap |
 | `ign_salud` | 8.311 establecimientos de salud del país | IGN, geoservicio WFS |
 | `salud_barrios` | Los 13 efectores de salud que caen en esos dos barrios | IGN |
+| `caba_radios_2022` | 3.554 radios censales de CABA con población, hogares y NBI | BA Data — Censo 2022 |
+| `caba_isocronas` / `caba_rutas_ors` | Isocronas de caminata y rutas por calle, congeladas | OpenRouteService |
 
 Para ver el catálogo completo:
 
